@@ -10,6 +10,24 @@ int linearSearch(int arr[], int n, int s) {
 	return -1;
 }
 
+int binarySearch(int arr[], int n, int s) {
+	int start = 0;
+	int end = n-1;
+	while(start < end) {
+		int mid = (start + end)/2;
+		if (arr[mid] == s) {
+			return mid;
+		}
+		else if (arr[mid] > s) {
+			end = mid-1;
+		}
+		else {
+			start = mid+1;
+		}
+	}
+	return -1;
+}
+
 int main() {
 	
 	// input array size
@@ -31,8 +49,16 @@ int main() {
 	int s;
 	scanf("%d", &s);
 
+	printf("Implement Linear Search(1) or Binary Search(2): ");
+	int choice;
+	scanf("%d", &choice);
+
 	// Part A
-	int ind = linearSearch(arr, n, s);
+	int ind;
+	
+	if (choice == 1) ind = linearSearch(arr, n, s);
+	else ind = binarySearch(arr, n, s);
+
 	if (ind>=0) printf("Element found at index %d", ind);
 	else printf("Element not found");
 

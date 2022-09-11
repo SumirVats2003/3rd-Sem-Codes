@@ -35,6 +35,7 @@ int binarySearch(int arr[100][100], int rows, int cols, int s) {
 			}
 		}
 	}
+	return -1;
 }
 
 int main() {
