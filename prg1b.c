@@ -37,7 +37,7 @@ int binarySearch(int arr[100][100], int rows, int cols, int s) {
 			}
 		}
 	}
-	printf("No. of comparisions made = %d", comparisions);
+	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 
@@ -58,6 +58,13 @@ int main() {
 	for (int i=0; i<rows; i++) {
 		for (int j=0; j<cols; j++) {
 			arr[i][j] = rand();
+		}
+	}
+
+	// Printing the array
+	printf("Generated array: \n");
+	for (int i=0; i<rows; i++) {
+		for (int j=0; j<cols; j++) {
 			printf("%d ", arr[i][j]);
 		}
 		printf("\n");
@@ -65,9 +72,9 @@ int main() {
 
 	// Sorting the array rows and printing it
 	sort(arr, rows, cols);
+	printf("Sorted array: \n");
 	for (int i=0; i<rows; i++) {
 		for (int j=0; j<cols; j++) {
-			// arr[i][j] = rand();
 			printf("%d ", arr[i][j]);
 		}
 		printf("\n");
@@ -80,8 +87,8 @@ int main() {
 
 	// Part B
 	int ind = binarySearch(arr, rows, cols, s);
-	if (ind>=0) printf("Element found at index %d", ind);
-	else printf("Element not found");
+	if (ind>=0) printf("Element found at index %d\n", ind);
+	else printf("Element not found\n");
 
 	return 0;
 }

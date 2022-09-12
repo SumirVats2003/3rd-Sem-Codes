@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void sort(int arr[], int n) {
+	for (int j=0; j<n-1; j++) {
+		for (int k=0; k<n-j-1; k++) {
+			if(arr[k] > arr[k+1]) {
+				int temp = arr[k];
+				arr[k] = arr[k+1];
+				arr[k+1] = temp;
+			}
+		}
+	}
+}
+
 int linearSearch(int arr[], int n, int s) {
 	int comparisions = 0;
 	for(int i=0; i<n; i++) {
@@ -9,11 +21,12 @@ int linearSearch(int arr[], int n, int s) {
 			return i;
 		}
 	}
-	printf("No. of comparisions made = %d", comparisions);
+	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 
 int binarySearch(int arr[], int n, int s) {
+	sort(arr, n);
 	int comparisions = 0;
 	int start = 0;
 	int end = n-1;
@@ -30,7 +43,7 @@ int binarySearch(int arr[], int n, int s) {
 			start = mid+1;
 		}
 	}
-	printf("No. of comparisions made = %d", comparisions);
+	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 
@@ -65,8 +78,8 @@ int main() {
 	if (choice == 1) ind = linearSearch(arr, n, s);
 	else ind = binarySearch(arr, n, s);
 
-	if (ind>=0) printf("Element found at index %d", ind);
-	else printf("Element not found");
+	if (ind>=0) printf("Element found at index %d\n", ind);
+	else printf("Element not found\n");
 
 	return 0;
 }
