@@ -18,11 +18,13 @@ void sort(int arr[100][100], int rows, int cols) {
 
 // Implementing Binary Search for each row
 int binarySearch(int arr[100][100], int rows, int cols, int s) {
+	int comparisions = 0;
 	for (int i=0; i<rows; i++) {
 		int start = 0;
 		int end = cols-1;
 		while(start < end) {
 			int mid = (start + end)/2;
+			comparisions++;
 			if (arr[i][mid] == s) {
 				printf("Row: %d ", i);
 				return mid;
@@ -35,6 +37,7 @@ int binarySearch(int arr[100][100], int rows, int cols, int s) {
 			}
 		}
 	}
+	printf("No. of comparisions made = %d", comparisions);
 	return -1;
 }
 

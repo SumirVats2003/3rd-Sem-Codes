@@ -2,18 +2,23 @@
 #include <stdlib.h>
 
 int linearSearch(int arr[], int n, int s) {
+	int comparisions = 0;
 	for(int i=0; i<n; i++) {
+		comparisions++;
 		if(arr[i] == s) {
 			return i;
 		}
 	}
+	printf("No. of comparisions made = %d", comparisions);
 	return -1;
 }
 
 int binarySearch(int arr[], int n, int s) {
+	int comparisions = 0;
 	int start = 0;
 	int end = n-1;
 	while(start < end) {
+		comparisions++;
 		int mid = (start + end)/2;
 		if (arr[mid] == s) {
 			return mid;
@@ -25,6 +30,7 @@ int binarySearch(int arr[], int n, int s) {
 			start = mid+1;
 		}
 	}
+	printf("No. of comparisions made = %d", comparisions);
 	return -1;
 }
 
