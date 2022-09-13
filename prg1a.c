@@ -1,3 +1,13 @@
+/*
+Name: Sumir Vats
+Faculty No.: 21COB133
+Enrolment No.: GK7140
+Sr. No.: 7
+
+Group Partner: Aisha Tanveer
+Sr. No. 17
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
