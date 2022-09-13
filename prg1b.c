@@ -5,6 +5,8 @@ Enrolment No.: GK7140
 Sr. No.: 7
 
 Group Partner: Aisha Tanveer
+Faculty No.: 21COB164
+Enrolment No.: GM6535
 Sr. No. 17
 */
 
