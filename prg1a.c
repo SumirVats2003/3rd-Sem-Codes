@@ -30,10 +30,10 @@ int linearSearch(int arr[], int n, int s) {
 	for(int i=0; i<n; i++) {
 		comparisions++;
 		if(arr[i] == s) {
+			printf("No. of comparisions made = %d\n", comparisions);
 			return i;
 		}
 	}
-	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 
@@ -46,6 +46,7 @@ int binarySearch(int arr[], int n, int s) {
 		comparisions++;
 		int mid = (start + end)/2;
 		if (arr[mid] == s) {
+			printf("No. of comparisions made = %d\n", comparisions);
 			return mid;
 		}
 		else if (arr[mid] > s) {
@@ -55,7 +56,6 @@ int binarySearch(int arr[], int n, int s) {
 			start = mid+1;
 		}
 	}
-	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 

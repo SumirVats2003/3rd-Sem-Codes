@@ -39,6 +39,7 @@ int binarySearch(int arr[100][100], int rows, int cols, int s) {
 			comparisions++;
 			if (arr[i][mid] == s) {
 				printf("Row: %d ", i);
+				printf("No. of comparisions made = %d\n", comparisions);
 				return mid;
 			}
 			else if (arr[i][mid] > s) {
@@ -49,7 +50,6 @@ int binarySearch(int arr[100][100], int rows, int cols, int s) {
 			}
 		}
 	}
-	printf("No. of comparisions made = %d\n", comparisions);
 	return -1;
 }
 
