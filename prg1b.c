@@ -12,18 +12,56 @@ Sr. No. 17
 
 #include <stdio.h>
 #include <stdlib.h>
+#include<time.h>
 
 // Sorting the array rows
-void sort(int arr[100][100], int rows, int cols) {
-	for (int i=0; i<rows; i++) {
-		for (int j=0; j<cols-1; j++) {
-			for (int k=0; k<cols-j-1; k++) {
-				if(arr[i][k] > arr[i][k+1]) {
-					int temp = arr[i][k];
-					arr[i][k] = arr[i][k+1];
-					arr[i][k+1] = temp;
-				}
+//void sort(int arr[100][100], int rows, int cols) {
+//	for (int i=0; i<rows; i++) {
+//		for (int j=0; j<cols-1; j++) {
+//			for (int k=0; k<cols-j-1; k++) {
+//				if(arr[i][k] > arr[i][k+1]) {
+//					int temp = arr[i][k];
+//					arr[i][k] = arr[i][k+1];
+//					arr[i][k+1] = temp;
+//				}
+//			}
+//		}
+//	}
+//}
+
+
+void sort(int arr[100][100], int rows, int cols)
+{
+	int ind = 0;
+	// int size = rows*cols;
+	int arr1[150];
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr1[ind] = arr[i][j];
+			ind++;
+		}
+	}
+	for (int j = 0; j < ind - 1; j++)
+	{
+		for (int k = 0; k < ind - j - 1; k++)
+		{
+			if (arr1[k] > arr1[k + 1])
+			{
+				int temp = arr1[k];
+				arr1[k] = arr1[k + 1];
+				arr1[k + 1] = temp;
 			}
+		}
+	}
+	ind = 0;
+	for (int i = 0; i < rows; i++)
+	{
+		for (int j = 0; j < cols; j++)
+		{
+			arr[i][j] = arr1[ind];
+			ind++;
 		}
 	}
 }
